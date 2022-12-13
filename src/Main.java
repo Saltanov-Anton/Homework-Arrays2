@@ -1,7 +1,10 @@
+import static java.lang.Integer.MAX_VALUE;
+import static java.lang.Integer.MIN_VALUE;
+
 public class Main {
     public static void main(String[] args) {
         task1();
-
+        task2();
     }
 
     public static int[] generateRandomArray() {
@@ -21,5 +24,25 @@ public class Main {
             sum += j;
         }
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
+    }
+
+    public static void task2() {
+        System.out.println("Задача 2");
+        int[] arr = generateRandomArray();
+        int maxValue = MIN_VALUE;
+        int minValue = MAX_VALUE;
+        for (int i : arr) {
+            if (i > maxValue) {
+                maxValue = i;
+            }
+
+            if (i < minValue) {
+                minValue = i;
+            }
+        }
+
+        System.out.println("Минимальная сумма трат за день составила " + minValue
+                + " рублей. Максимальная сумма трат за день составила " + maxValue
+                + " рублей");
     }
 }
